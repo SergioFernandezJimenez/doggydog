@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
- <p>Future image</p>
+ <img src="assets/logo-doggydog.png" alt="DoggyDog logo" width="200">
   <br>
   DoggyDog
   <br>
