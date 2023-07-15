@@ -40,15 +40,15 @@ Here is a working live demo :  insert future deployed web here
 > Email [sergiofernandezjimenez1997@outlook.es](sergiofernandezjimenez1997@outlook.es)
 
 --- Santiago Moltó Martínez ---
-> GitHub [@AndresMancheno](https://github.com/AndresMancheno) &nbsp;&middot;&nbsp;
+> GitHub [@smolto](https://github.com/smolto) &nbsp;&middot;&nbsp;
 > Linkedin [Santiago Moltó Martínez](https://www.linkedin.com/in/santiago-molt%C3%B3-mart%C3%ADnez-89a656179/) &nbsp;&middot;&nbsp;
-> Email [sergiofernandezjimenez1997@outlook.es](sergiofernandezjimenez1997@outlook.es)
+> Email [santiagomoltomartinez@gmail.com](santiagomoltomartinez@gmail.com)
 
 --- Andrés Mancheño Alcaraz ---
-> GitHub [@smolto](https://github.com/smolto) &nbsp;&middot;&nbsp;
+> GitHub [@AndresMancheno](https://github.com/AndresMancheno) &nbsp;&middot;&nbsp;
 > Linkedin [Andrés Mancheño Alcaraz](https://www.linkedin.com/in/andr%C3%A9s-manche%C3%B1o-alcaraz-ba0273237/) &nbsp;&middot;&nbsp;
-> Email [sergiofernandezjimenez1997@outlook.es](sergiofernandezjimenez1997@outlook.es)
+> Email [andres.mancheno.alcaraz@gmail.com](andres.mancheno.alcaraz@gmail.com)
 
-## Support
+## Support ❤️
 
-<p>Insert future donation channel here ❤️</p>
+<p>Insert future donation channel here</p>
