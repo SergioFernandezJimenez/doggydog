@@ -1,0 +1,59 @@
+---
+import CardNavigation from "./CardNavigation.astro";
+---
+
+<div class="container">
+  <h2>Adentrate en el mundo canino</h2>
+  <div class="cards-container">
+    <div class="cards-column">
+      <div class="text-container">
+        <h3 class="title">Dale una segunda oportunidad a un perro</h3>
+        <p class="description">Con este acto de amor, ganas un amigo incondicional, combates el abandono y demuestras que la compasión tiene el poder de transformar el mundo.</p>
+      </div>
+      <CardNavigation title="Busca a tu amigo" description="Descubre a tu nuevo y fiel amigo para vivir juntos y cuidaros." color="#fcd6ca" link={{text: "Explorar", url: "/dogs"}} img={{image: "/doggy-card-dogs.png", alt: "Perro feliz"}}/>
+      <CardNavigation title="Nuestras protectoras" description="Descubre las protectoras de España que apoyan a los perros y hacen una labor tan importante." color="#e4e2f4" link={{text: "Descubrir", url: "/protectors"}} img={{image: "/doggy-card-protectors.png", alt: "Protectora"}}/>
+    </div>
+    <div class="cards-column">
+      <CardNavigation title="Ayudanos, ayudalos" description="Ayuda a tu protectora favorita siendo voluntario o aportando lo que puedas." color="#ddeae4" link={{text: "Ayudar", url: "/colaborate"}} img={{image: "/doggy-card-protectors.png", alt: "Protectora"}}/>
+      <CardNavigation title="Noticias caninas" description="Conoce las noticias y consejos más importantes del mundo canino." color="#9bc1bc" link={{text: "Visitar", url: "/notices"}} img={{image: "/doggy-card-notices.png", alt: "Periódico"}}/>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cards-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  h2 {
+    font-size: 3rem;
+    color: var(--color-text);
+    font-size: bold;
+    margin-bottom: 2rem;
+  }
+  .text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0 0 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  .text-container .title {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    font-size: bold;
+    line-height: 1.2;
+  }
+  .text-container .description {
+    color: var(--color-text);
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+</style>

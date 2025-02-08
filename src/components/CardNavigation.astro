@@ -1,0 +1,60 @@
+---
+const { title, description, img, link, color } = Astro.props;
+---
+
+<div class="container">
+  <div class="text-container">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+  <div class="action-container">
+    <a href={link.url}>{link.text}</a>
+    <img src={img.image} alt={img.alt} />
+  </div>
+</div>
+
+<style define:vars={{color: color}}>
+  .container{
+    border-radius: 2.8rem;
+    background-color: var(--color);
+    padding: 2rem 2rem 0 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  h3 {
+    font-size: 3rem;
+    line-height: 1;
+    font-size: bold;
+    color: var(--color-text);
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+  .action-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img{
+    display: flex;
+    max-height: 187px;
+    max-width: 213px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    background: aliceblue;
+  }
+  a:hover {
+    filter: brightness(1.2);
+  }
+</style>

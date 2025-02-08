@@ -1,0 +1,49 @@
+---
+
+import AnimatedCounter from './AnimatedCounter.svelte';
+---
+<script>
+</script>
+
+<div class="container">
+  <div class="statistic-container">
+    <div class="number"><AnimatedCounter client:load targetNumber={165} duration={1500} /></div>
+    <p>Perros adoptados</p>
+  </div>
+  <div class="statistic-container">
+    <div class="number"><AnimatedCounter client:load targetNumber={52} duration={1500} /></div>
+    <p>Voluntarios</p>
+  </div>
+  <div class="statistic-container">
+    <div class="number"><AnimatedCounter client:load targetNumber={1630} duration={1500} /><span>€</span></div>
+    <p>Recaudados</p>
+  </div>
+</div>
+
+<style>
+  .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0px 0px 12px rgba(0, 0, 0, .15);
+		background-color: white;
+  }
+  .statistic-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    width: 100%;
+  }
+  .number{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-text);
+  }
+  p {
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+</style>

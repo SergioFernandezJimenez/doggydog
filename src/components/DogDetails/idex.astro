@@ -1,0 +1,103 @@
+---
+import Info from "./Info/index.astro";
+const { id, name, img, gender, size, pedigree, birthDate, state , slug} = Astro.props;
+---
+
+<div class="container">
+  <div class="img-container">
+  <div class="blur-container">
+    <img
+      transition:name=`img-${slug}`
+      src={`/${img.profile}`}
+      alt=`Imagen de ${name}`
+    />
+  </div>
+</div>
+<div class="info-container">
+  <div class="header-container">
+    <h1>{ name }</h1>
+    <div class="icons-container">
+      <button class="icon-container share-container">
+        <span>Compartir</span>
+      </button>
+      <button class="icon-container favorite-container">
+        <!-- <Heart client:load /> -->
+        <span>Favorito</span>
+      </button>
+    </div>
+  </div>
+  <Info gender={gender} size={size} pedigree={pedigree} birthDate={birthDate} state={state} />
+</div>
+</div>
+
+
+<style define:vars={{img: `url(/${img.profile})`}}>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+    .img-container {
+      width: 100%;
+      height: 500px;
+      background-image: var(--img);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      border-radius: 20px;
+    }
+    .blur-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(60px);
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+  
+    }
+    img {
+      box-shadow: 0 0 8px 8px white inset;
+      border-radius: 20px;
+    }
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 1312px;
+    }
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem;
+    }
+    .icons-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .icon-container {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.5rem;
+    }
+    .favorite-container {
+      color: red;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .share-container {
+      color: blue;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>

@@ -1,0 +1,88 @@
+---
+
+---
+
+<div class="container">
+  <div class="logo"><a href="/"><img src="/doggy-logo.svg" /><span class="logo-text">Doggy Dog</span></a></div>
+  <nav>
+    <ul>
+      <li class="dogs"><a href="/dogs">Perros</a></li>
+      <li class="protectors"><a href="/protectors">Protectoras</a></li>
+      <li class="notices"><a href="/notices">Noticias</a></li>
+      <li class="contact"><a href="/contact">Contacto</a></li>
+    </ul>
+  </nav>
+  <div class="colaborate"><a href="/colaborate">Colabora</a></div>
+</div>
+
+<style>
+	.container {
+		display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+    backdrop-filter: blur(10px);
+    background: white;
+    border-bottom: 2px solid #e9e9ee;
+	}
+  .logo {
+    font-size: 1.5rem;
+    flex-grow: 1;
+  }
+  .logo a{
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0.5rem;
+    padding: 0;
+  }
+  .logo a:hover {
+    transform: scale(1.08);
+  }
+  img{
+    max-width: 4rem;
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    font-size: 1.2rem;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 2px solid transparent;
+  }
+  li a:is(:hover, :focus-within) {
+    background-color: rgba(237, 242, 247, 1);
+    border-radius: 0.5rem;
+  }
+  a{
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+		color: var(--color-text);
+  }
+  .colaborate{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .colaborate a {
+    background-color: aquamarine;
+    border-radius: 10px;
+    font-weight: bold;
+    outline: 2px solid transparent;
+  }
+  .colaborate a:hover{
+    filter: brightness(90%);
+  }
+  @media (max-width: 768px) {
+    .logo-text {
+      display: none;
+    }
+  }
+</style>

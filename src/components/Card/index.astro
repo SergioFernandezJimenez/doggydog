@@ -1,12 +1,6 @@
 ---
-import {
-	getGenderFormatted,
-	getSizeFormatted,
-	getStateFormatted,
-	getAgeFormatted,
-	getPedigreeFormatted,
-} from "../utils/transformInfo";
-import HeartIcon from "./icons/Heart.svelte";
+import { getGenderFormatted, getSizeFormatted, getStateFormatted, getAgeFormatted, getPedigreeFormatted } from '../utils/transformInfo';
+import HeartIcon from './icons/Heart.svelte';
 interface Props {
 	slug: string;
 	name: string;
@@ -18,8 +12,7 @@ interface Props {
 	state: string;
 }
 
-const { slug, name, profile, gender, size, pedigree, birthDate, state } =
-	Astro.props;
+const { slug, name, profile, gender, size, pedigree, birthDate, state } = Astro.props;
 ---
 
 <div class="card">

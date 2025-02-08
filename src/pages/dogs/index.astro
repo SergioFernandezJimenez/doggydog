@@ -1,0 +1,39 @@
+---
+import {getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+
+const dogs = await getCollection('dogs');
+---
+
+<Layout title="Encuentra a tu amigo - Doggy Dog">
+		<div class="cards-grid">
+			{
+				dogs.map((dog) => {
+					const { slug, data } = dog
+					const { id, name, img, gender, size, pedigree, birthDate, state } = data
+					return(
+					<Card
+						slug={slug}
+						name={name}
+						profile={img.profile}
+						gender={gender}
+						size={size}
+						pedigree={pedigree}
+						birthDate={birthDate}
+						state={state}
+					/>
+				)
+				})
+			}
+		</div>
+</Layout>
+
+<style>
+	.cards-grid {
+		display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+	}
+</style>
