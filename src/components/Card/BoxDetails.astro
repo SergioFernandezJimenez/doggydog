@@ -1,0 +1,61 @@
+---
+import {
+  getAgeFormatted,
+  getGenderFormatted,
+  getSizeFormatted,
+} from "../../utils/transformInfo";
+
+interface Props {
+  gender: string;
+  size: string;
+  pedigree: string;
+  birthdate: string;
+}
+
+const { gender, size, pedigree, birthdate } = Astro.props;
+---
+
+<div class="container">
+  <div class="box">
+    <div>{getGenderFormatted(gender)}</div>
+    <p>Género</p>
+  </div>
+  <div class="separator"></div>
+  <div class="box">
+    <div>{getSizeFormatted(size)}</div>
+    <p>Tamaño</p>
+  </div>
+  <div class="separator"></div>
+  <div class="box">
+    <div>{getAgeFormatted(birthdate)}</div>
+    <p>Edad</p>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+  }
+  .separator {
+    width: 1px;
+    background-color: #e0e0e0;
+  }
+  .box > div {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #551a8b;
+  }
+  p {
+    margin: 0;
+    color: var(--color-subtitle);
+  }
+</style>

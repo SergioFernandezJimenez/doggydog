@@ -1,87 +1,94 @@
 ---
-import { getGenderFormatted, getSizeFormatted, getStateFormatted, getAgeFormatted, getPedigreeFormatted } from '../utils/transformInfo';
-import HeartIcon from './icons/Heart.svelte';
+import BoxDetails from "./BoxDetails.astro";
+
 interface Props {
-	slug: string;
-	name: string;
-	profile: string;
-	gender: string;
-	size: string;
-	pedigree: string;
-	birthDate: string;
-	state: string;
+  slug: string;
+  name: string;
+  profile: string;
+  gender: string;
+  size: string;
+  pedigree: string;
+  birthDate: string;
+  state: string;
 }
 
-const { slug, name, profile, gender, size, pedigree, birthDate, state } = Astro.props;
+const { slug, name, profile, gender, size, pedigree, birthDate, state } =
+  Astro.props;
 ---
 
 <div class="card">
-	<a href={`/dogs/${slug}`} class="link-card">
-		<img
-			transition:name=`img-${slug}`
-			src={profile}
-			alt=`Imagen de ${name}`
-		/>
-		<div class="favorite-container">
-      <HeartIcon client:load />
+  <a href={`/dogs/${slug}`} class="link-card">
+    <div class="header-card">
+      <img
+        transition:name=`img-${slug}`
+        src={profile}
+        alt=`Imagen de ${name}`
+      />
+      <div class="header">
+        <h2 class="name">{name}</h2>
+      </div>
     </div>
-		<div class="content">
-			<h2>{name}</h2>
-			<div>
-				<p>genero: {getGenderFormatted(gender)}</p>
-				<p>tamaño: {getSizeFormatted(size)}</p>
-				<p>raza: {getPedigreeFormatted(pedigree)}</p>
-				<p>edad: {getAgeFormatted(birthDate)}</p>
-				<p>{getStateFormatted(state)}</p>
-			</div>
-		</div>
-	</a>
+    <div class="content">
+      <BoxDetails
+        gender={gender}
+        size={size}
+        pedigree={pedigree}
+        birthdate={birthDate}
+      />
+    </div>
+  </a>
 </div>
 
 <style>
-	.card {
-		width: fit-content;
-		display: flex;
-		position: relative;
-		border-radius: 20px;
-		background-color: white;
-		box-shadow: 0 0 #0000, 0 0 #0000, 0px 0px 12px rgba(0, 0, 0, .15);
-		transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	.card:is(:hover, :focus-within) {
-		transform: scale(1.08);
-	}
-	.link-card {
-		display: flex;
-		gap: 2rem;
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1.5rem;
-	}
-	img {
-		width: 200px;
-		object-fit: cover;
-		border-radius: 8px;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.favorite-container {
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin: 0.5rem;
-	}
-	.content {
-		line-height: 1.7;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 2rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
+  .card {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    border: 1px solid #d5dfff;
+    border-radius: 16px;
+    background-color: #fafbff;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:is(:hover, :focus-within) {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 #0000,
+      0 0 #0000,
+      0px 0px 12px rgba(0, 0, 0, 0.15);
+  }
+  .link-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1.5rem;
+  }
+  .header-card {
+    max-width: 300px;
+  }
+  img {
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content {
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
 </style>

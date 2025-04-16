@@ -33,7 +33,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  color: #010231;
+  color: var(--color-text);
 }
 #root,
 #__next {
@@ -42,4 +42,13 @@ h6 {
 html {
   font-family: system-ui, sans-serif;
   background: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
 }

@@ -1,63 +1,58 @@
 ---
-import Banner from '../components/Banner.astro';
-import Card from '../components/Card.astro';
-import Nav from '../components/Nav.astro';
-import SectionCards from '../components/SectionCards.astro';
-import Statistics from '../components/Statistics.astro';
-import Layout from '../layouts/Layout.astro';
-import {getCollection } from 'astro:content';
-
-const dogs = await getCollection('dogs');
+import Banner from "../components/Banner.astro";
+import SectionCards from "../components/SectionCards.astro";
+import Statistics from "../components/Statistics.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Doggy Dog">
-	<div>
-		<div class="banner">
-			<Banner />
-		</div>
-		<div class="content">
-			<section class="section-statistics">
-				<Statistics />
-			</section>
-			<section class="section-cards">
-				<SectionCards />
-			</section>
-		</div>
-	</div>
+  <div>
+    <div class="banner">
+      <Banner />
+    </div>
+    <div class="content">
+      <section class="section-statistics">
+        <Statistics />
+      </section>
+      <section class="section-cards">
+        <SectionCards />
+      </section>
+    </div>
+  </div>
 </Layout>
 
 <style>
-	.banner {
-		padding: 0rem 0 10rem;
-		background-color: rgba(237,242,247,1);
-		border-bottom-left-radius: 50% 300px;
+  .banner {
+    padding: 8rem 0 10rem;
+    background-color: rgba(237, 242, 247, 1);
+    border-bottom-left-radius: 50% 300px;
     border-bottom-right-radius: 50% 300px;
-	}
-	.content {
-		display: flex;
+  }
+  .content {
+    display: flex;
     flex-direction: column;
     gap: 5rem;
-		margin: auto;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-	}
-	.section-statistics {
-		margin: -8rem 1rem;
-	}
-	.section-cards {
-		margin: 8rem 1rem;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.cards-grid {
-		display: grid;
+    margin: auto;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+  }
+  .section-statistics {
+    margin: -8rem 1rem;
+  }
+  .section-cards {
+    margin: 8rem 1rem;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .cards-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 2rem;
     padding: 2rem;
-	}
+  }
 </style>

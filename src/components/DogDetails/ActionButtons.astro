@@ -1,0 +1,44 @@
+---
+import Heart from "../Icons/Heart.astro";
+import Share from "../Icons/Share.astro";
+---
+
+<div class="container">
+  <button class="share">
+    <Heart color="red" />
+  </button>
+  <button class="favorite">
+    <Share color="blue" />
+  </button>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    filter: opacity(0.7);
+  }
+  button:hover {
+    filter: opacity(1);
+  }
+  .favorite-container {
+    color: red;
+    border-radius: 10px;
+  }
+  .share-container {
+    color: blue;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+</style>

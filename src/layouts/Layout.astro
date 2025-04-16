@@ -1,10 +1,10 @@
 ---
-import { ClientRouter } from 'astro:transitions';
-import '../styles/global.css';
-import '@fontsource-variable/onest';
-import Nav from '../components/Nav.astro';
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+import "@fontsource-variable/onest";
+import Nav from "../components/Nav.astro";
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,52 +12,70 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Una plataforma que recoge información sobre perros de las protectoras de España para poder adoptarlos o donar a tu protectora favorita" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/doggy-logo.jpeg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ClientRouter />
-	</head>
-	<body>
-		<header>
-			<Nav />
-		</header>
-		<main>
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Una plataforma que recoge información sobre perros de las protectoras de España para poder adoptarlos o donar a tu protectora favorita"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/doggy-logo.jpeg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      <div class="bg"></div>
+      <slot />
+    </main>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--color-text: #010231;
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: 'Onest', sans-serif;
-	}
-	header {
-		position: fixed;
+  :root {
+    --color-text: #2f1c6a;
+    --color-subtitle: #666;
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: "Onest", sans-serif;
+  }
+  header {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 9999;
-	}
-	main {
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-		margin-top: 82px;
-	}
+  }
+  main {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .bg {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-image: radial-gradient(
+      100% 50% at 50% 0%,
+      rgba(0, 163, 255, 0.13) 0%,
+      rgba(0, 163, 255, 0) 50%,
+      rgba(0, 163, 255, 0) 100%
+    );
+  }
 </style>

@@ -3,25 +3,53 @@ import CardNavigation from "./CardNavigation.astro";
 ---
 
 <div class="container">
-  <h2>Adentrate en el mundo canino</h2>
+  <h2>Explora</h2>
   <div class="cards-container">
     <div class="cards-column">
       <div class="text-container">
         <h3 class="title">Dale una segunda oportunidad a un perro</h3>
-        <p class="description">Con este acto de amor, ganas un amigo incondicional, combates el abandono y demuestras que la compasión tiene el poder de transformar el mundo.</p>
+        <p class="description">
+          Con este acto de amor, ganas un amigo incondicional, combates el
+          abandono y demuestras que la compasión tiene el poder de transformar
+          el mundo.
+        </p>
       </div>
-      <CardNavigation title="Busca a tu amigo" description="Descubre a tu nuevo y fiel amigo para vivir juntos y cuidaros." color="#fcd6ca" link={{text: "Explorar", url: "/dogs"}} img={{image: "/doggy-card-dogs.png", alt: "Perro feliz"}}/>
-      <CardNavigation title="Nuestras protectoras" description="Descubre las protectoras de España que apoyan a los perros y hacen una labor tan importante." color="#e4e2f4" link={{text: "Descubrir", url: "/protectors"}} img={{image: "/doggy-card-protectors.png", alt: "Protectora"}}/>
+      <CardNavigation
+        title="Busca a tu amigo"
+        description="Descubre a tu nuevo y fiel amigo para vivir juntos y cuidaros."
+        color="#fcd6ca"
+        link={{ text: "Explorar", url: "/dogs" }}
+        img={{ image: "/doggy-card-dogs.png", alt: "Perro feliz" }}
+      />
+      <CardNavigation
+        title="Nuestras protectoras"
+        description="Descubre las protectoras de España que apoyan a los perros y hacen una labor tan importante."
+        color="#e4e2f4"
+        link={{ text: "Descubrir", url: "/protectors" }}
+        img={{ image: "/doggy-card-protectors.png", alt: "Protectora" }}
+      />
     </div>
     <div class="cards-column">
-      <CardNavigation title="Ayudanos, ayudalos" description="Ayuda a tu protectora favorita siendo voluntario o aportando lo que puedas." color="#ddeae4" link={{text: "Ayudar", url: "/colaborate"}} img={{image: "/doggy-card-protectors.png", alt: "Protectora"}}/>
-      <CardNavigation title="Noticias caninas" description="Conoce las noticias y consejos más importantes del mundo canino." color="#9bc1bc" link={{text: "Visitar", url: "/notices"}} img={{image: "/doggy-card-notices.png", alt: "Periódico"}}/>
+      <CardNavigation
+        title="Ayudanos, ayudalos"
+        description="Ayuda a tu protectora favorita siendo voluntario o aportando lo que puedas."
+        color="#ddeae4"
+        link={{ text: "Ayudar", url: "/colaborate" }}
+        img={{ image: "/doggy-card-protectors.png", alt: "Protectora" }}
+      />
+      <CardNavigation
+        title="Noticias caninas"
+        description="Conoce las noticias y consejos más importantes del mundo canino."
+        color="#9bc1bc"
+        link={{ text: "Visitar", url: "/notices" }}
+        img={{ image: "/doggy-card-notices.png", alt: "Periódico" }}
+      />
     </div>
   </div>
 </div>
 
 <style>
-  .cards-container{
+  .cards-container {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -36,8 +64,21 @@ import CardNavigation from "./CardNavigation.astro";
     color: var(--color-text);
     font-size: bold;
     margin-bottom: 2rem;
+    position: relative;
+    width: fit-content;
   }
-  .text-container{
+  h2::before {
+    background-color: rgb(224, 204, 250);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.4em;
+    left: 0;
+    bottom: 12px;
+    z-index: -1;
+    transform: rotate(-2deg);
+  }
+  .text-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;

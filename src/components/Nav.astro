@@ -2,34 +2,69 @@
 
 ---
 
+<script type="module">
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const navElement = document.getElementsByClassName("container");
+
+    if (navElement.length > 0 && scrollTop > 10) {
+      navElement[0].style.boxShadow =
+        "0 6.2rem 1.7rem 0 transparent, 0 4rem 1.6rem 0 rgba(0, 0, 0, 0.01), 0 2.2rem 1.3rem 0 rgba(0, 0, 0, 0.02), 0 1rem 1rem 0 rgba(0, 0, 0, 0.04), 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.04)";
+      navElement[0].style.backgroundColor = "white";
+      navElement[0].style.backdropFilter = "blur(12px)";
+    } else {
+      navElement[0].style.boxShadow = "none";
+      navElement[0].style.backgroundColor = "white";
+      navElement[0].style.backdropFilter = "none";
+    }
+  });
+</script>
+
 <div class="container">
-  <div class="logo"><a href="/"><img src="/doggy-logo.svg" /><span class="logo-text">Doggy Dog</span></a></div>
-  <nav>
-    <ul>
-      <li class="dogs"><a href="/dogs">Perros</a></li>
-      <li class="protectors"><a href="/protectors">Protectoras</a></li>
-      <li class="notices"><a href="/notices">Noticias</a></li>
-      <li class="contact"><a href="/contact">Contacto</a></li>
-    </ul>
-  </nav>
+  <div class="content">
+    <div class="logo">
+      <a href="/"
+        ><img src="/doggy-logo.svg" /><span class="logo-text">Doggy Dog</span
+        ></a
+      >
+    </div>
+    <nav>
+      <ul>
+        <li class="dogs"><a href="/dogs">Perros</a></li>
+        <li class="protectors"><a href="/protectors">Protectoras</a></li>
+        <li class="notices"><a href="/notices">Noticias</a></li>
+        <li class="contact"><a href="/contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
   <div class="colaborate"><a href="/colaborate">Colabora</a></div>
 </div>
 
 <style>
-	.container {
-		display: flex;
+  .container {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 2rem;
     padding: 0 1rem;
     backdrop-filter: blur(10px);
     background: white;
     border-bottom: 2px solid #e9e9ee;
-	}
+    border-radius: 2rem;
+    margin: 2rem auto;
+    max-width: 60rem;
+    transition: all 0.3s linear;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
   .logo {
     font-size: 1.5rem;
     flex-grow: 1;
   }
-  .logo a{
+  .logo a {
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     display: flex;
     align-items: center;
@@ -40,12 +75,12 @@
   .logo a:hover {
     transform: scale(1.08);
   }
-  img{
+  img {
     max-width: 4rem;
   }
   ul {
     display: flex;
-    gap: 2rem;
+    gap: 0.5rem;
     align-items: center;
     list-style: none;
     padding: 0;
@@ -60,24 +95,22 @@
     background-color: rgba(237, 242, 247, 1);
     border-radius: 0.5rem;
   }
-  a{
+  a {
     text-decoration: none;
     padding: 0.8rem 1.2rem;
-		color: var(--color-text);
+    color: var(--color-text);
   }
-  .colaborate{
+  .colaborate {
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .colaborate a {
     background-color: aquamarine;
-    border-radius: 10px;
+    border-radius: 5rem;
     font-weight: bold;
     outline: 2px solid transparent;
   }
-  .colaborate a:hover{
+  .colaborate a:hover {
     filter: brightness(90%);
   }
   @media (max-width: 768px) {

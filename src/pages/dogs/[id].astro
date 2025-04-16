@@ -1,22 +1,32 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import DogDetails from "../../components/DogDetails/idex.astro";
+import DogDetails from "../../components/DogDetails/index.astro";
 
-export async function getStaticPaths (){
-  const dogs = await getCollection('dogs');
+export async function getStaticPaths() {
+  const dogs = await getCollection("dogs");
 
-  return dogs.map(dog  => ({
+  return dogs.map((dog) => ({
     params: { id: dog.slug },
     props: { dog },
-  }))
-};
+  }));
+}
 
 const { dog } = Astro.props;
 const { data, slug } = dog;
-const { id, name, img, gender, size, pedigree, birthDate, state } = data
+const { id, name, img, gender, size, pedigree, birthDate, state } = data;
 ---
 
 <Layout title=`${name} - Doggy Dog`>
-  <DogDetails slug={slug} id={id} name={name} img={img} gender={gender} size={size} pedigree={pedigree} birthDate={birthDate} state={state} />
+  <DogDetails
+    slug={slug}
+    id={id}
+    name={name}
+    img={img}
+    gender={gender}
+    size={size}
+    pedigree={pedigree}
+    birthDate={birthDate}
+    state={state}
+  />
 </Layout>
